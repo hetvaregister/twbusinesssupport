@@ -92,7 +92,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .hero-split{display:grid!important;grid-template-columns:1fr 1fr;gap:60px;align-items:center;flex-direction:unset!important;min-height:100vh;padding:110px 48px 80px;max-width:var(--max);margin:0 auto}
 .hero-content{display:flex;flex-direction:column}
 .hero-content .hero-stats{margin-top:auto}
-.hero-photo{position:relative}
+.hero-photo{position:relative;border-top:2px solid var(--gold);padding-top:32px}
 .hero-photo img{width:100%;height:580px;object-fit:cover;object-position:center top;border-radius:4px;filter:grayscale(15%)}
 
 /* ABOUT PHOTO */
@@ -209,8 +209,8 @@ footer{background:var(--black);color:rgba(255,255,255,.5);padding:64px 48px 40px
   .nav-links{display:none}
   .hamburger{display:flex}
   .hero-split{grid-template-columns:1fr!important;padding:88px 24px 60px}
-  .hero-photo{order:-1}
-  .hero-photo img{height:300px;object-position:center 15%}
+  .hero-photo{order:-1;border-top:none;padding-top:0}
+  .hero-photo img{height:auto;max-height:480px;object-fit:contain;object-position:center;background:var(--bg)}
   .hero h1{font-size:42px;letter-spacing:-1px}
   .hero-sub{font-size:15px}
   .hero-act{flex-direction:column;align-items:flex-start}
@@ -461,7 +461,7 @@ footer{background:var(--black);color:rgba(255,255,255,.5);padding:64px 48px 40px
           <div class="frow"><label class="flbl" for="bericht">Bericht</label><textarea class="fta" id="bericht" name="bericht" placeholder="Waar kan ik je mee helpen?" required></textarea></div>
           <div class="fchk">
             <input type="checkbox" id="akkoord" required>
-            <label for="akkoord">Ik ga ermee akkoord dat mijn gegevens worden gebruikt om contact met mij op te nemen, conform de <a href="#" style="color:var(--gold)">privacyverklaring</a>.</label>
+            <label for="akkoord">Ik ga ermee akkoord dat mijn gegevens worden gebruikt om contact met mij op te nemen, conform de <a href="privacyverklaring.html" style="color:var(--gold)">privacyverklaring</a>.</label>
           </div>
           <button type="submit" class="fsub">Verstuur bericht</button>
         </form>
@@ -497,8 +497,8 @@ footer{background:var(--black);color:rgba(255,255,255,.5);padding:64px 48px 40px
         <ul>
           <li><a href="tel:0634294162">06-34294162</a></li>
           <li><a href="mailto:talitha@twbusinesssupport.com">talitha@twbusinesssupport.com</a></li>
-          <li><a href="#">Privacyverklaring</a></li>
-          <li><a href="#">Algemene voorwaarden</a></li>
+          <li><a href="privacyverklaring.html">Privacyverklaring</a></li>
+          <li><a href="algemene-voorwaarden.html">Algemene voorwaarden</a></li>
         </ul>
       </div>
     </div>
