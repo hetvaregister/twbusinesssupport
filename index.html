@@ -195,6 +195,17 @@ footer{background:#111111;color:#ffffff;padding:64px 48px 40px}
 .fcol li a:hover{color:var(--gold)}
 .fb{display:flex;justify-content:space-between;font-size:12px;flex-wrap:wrap;gap:8px;color:rgba(255,255,255,.7)}
 
+/* ANIMATIES */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.val.fade-in:nth-child(2){transition-delay:0.1s}
+.val.fade-in:nth-child(3){transition-delay:0.2s}
+.svc.fade-in:nth-child(2){transition-delay:0.1s}
+.svc.fade-in:nth-child(3){transition-delay:0.15s}
+.svc.fade-in:nth-child(4){transition-delay:0.2s}
+.testi.fade-in:nth-child(2){transition-delay:0.1s}
+.testi.fade-in:nth-child(3){transition-delay:0.2s}
+
 /* RESPONSIVE */
 /* HAMBURGER */
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
@@ -529,6 +540,51 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}});
 });
+
+// Fade-in animatie bij scrollen
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.val, .svc, .testi, .pi, .faq-item, .about-g, .hero-content, .hero-photo, .con-g').forEach(el => {
+  el.classList.add('fade-in');
+  observer.observe(el);
+});
+
+// Teller animatie voor statistieken
+function animateCounter(el, target, suffix) {
+  let start = 0;
+  const duration = 1500;
+  const step = (timestamp) => {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target) + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const text = el.textContent;
+      if (text.includes('%')) animateCounter(el, parseInt(text), '%');
+      else if (text.includes('+')) animateCounter(el, parseInt(text), '+');
+      else if (text.includes('€')) { el.textContent = '€0'; animateCounter({textContent:''}, 50, ''); el.textContent = '€50'; }
+      statObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.snum').forEach(el => statObserver.observe(el));
+
 </script>
 </body>
 </html>
