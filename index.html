@@ -392,7 +392,7 @@ footer{background:#111111;color:#ffffff;padding:64px 48px 40px}
     <div class="testi-g">
       <div class="testi"><span class="qm">"</span><p class="ttxt">Talitha heeft mijn werkdruk gelukkig wat verlicht. Ik kan weer gewoon het dak op! Het is erg fijn om met haar samen te werken, ze denkt graag mee en vooruit.</p><span class="tnm">Larry</span><span class="tco">Dakservice Kennemerland</span></div>
       <div class="testi"><span class="qm">"</span><p class="ttxt">Talitha helpt me perfect met mijn administratie. De communicatie verloopt altijd erg prettig en er wordt goed meegedacht. Ik ben erg blij met haar ondersteuning!</p><span class="tnm">Hans</span><span class="tco">HAKO Klus en Onderhoud</span></div>
-      <div class="testi"><span class="qm">"</span><p class="ttxt">Een kwaliteitsvrouw! Met kennis, expertise, vaardigheden én doorzettingsvermogen waar je U tegen zegt. Talitha, dank voor alles wat je voor ons doet!</p><span class="tnm">Dorine Holman</span><span class="tco">Opdrachtgever</span></div>
+      <div class="testi"><span class="qm">"</span><p class="ttxt">Een kwaliteitsvrouw! Met kennis, expertise, vaardigheden én doorzettingsvermogen waar je U tegen zegt. Talitha, dank voor alles wat je voor ons doet!</p><span class="tnm">Dorine Holman</span><span class="tco">Dorine Holman&</span></div>
     </div>
   </div>
 </section>
@@ -577,7 +577,7 @@ const statObserver = new IntersectionObserver((entries) => {
       const text = el.textContent;
       if (text.includes('%')) animateCounter(el, parseInt(text), '%');
       else if (text.includes('+')) animateCounter(el, parseInt(text), '+');
-      else if (text.includes('€')) { el.textContent = '€0'; animateCounter({textContent:''}, 50, ''); el.textContent = '€50'; }
+      else if (text.includes('€')) { el.textContent = '€0'; animateCounter({textContent:''}, 55, ''); el.textContent = '€55'; }
       statObserver.unobserve(el);
     }
   });
