@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/home/", "destination": "/", "permanent": true },
+    { "source": "/over-mij", "destination": "/#over-mij", "permanent": true },
+    { "source": "/over-mij/", "destination": "/#over-mij", "permanent": true },
+    { "source": "/over-ons", "destination": "/#over-mij", "permanent": true },
+    { "source": "/over-ons/", "destination": "/#over-mij", "permanent": true },
+    { "source": "/diensten", "destination": "/#diensten", "permanent": true },
+    { "source": "/diensten/", "destination": "/#diensten", "permanent": true },
+    { "source": "/services", "destination": "/#diensten", "permanent": true },
+    { "source": "/services/", "destination": "/#diensten", "permanent": true },
+    { "source": "/tarieven", "destination": "/#tarieven", "permanent": true },
+    { "source": "/tarieven/", "destination": "/#tarieven", "permanent": true },
+    { "source": "/prijzen", "destination": "/#tarieven", "permanent": true },
+    { "source": "/prijzen/", "destination": "/#tarieven", "permanent": true },
+    { "source": "/faq", "destination": "/#faq", "permanent": true },
+    { "source": "/faq/", "destination": "/#faq", "permanent": true },
+    { "source": "/veelgestelde-vragen", "destination": "/#faq", "permanent": true },
+    { "source": "/veelgestelde-vragen/", "destination": "/#faq", "permanent": true },
+    { "source": "/contact", "destination": "/#contact", "permanent": true },
+    { "source": "/contact/", "destination": "/#contact", "permanent": true },
+    { "source": "/social-media-analyse", "destination": "/#social-media-analyse", "permanent": true },
+    { "source": "/social-media-analyse/", "destination": "/#social-media-analyse", "permanent": true }
+  ]
+}
